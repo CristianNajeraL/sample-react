@@ -6,7 +6,7 @@ phases:
       - npm install
   build:
     commands:
-      - npm build
+      - npm run build
       - aws s3 sync --delete build/public $S3_BUCKET_FE
       - aws cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths '/*'
 cache:
